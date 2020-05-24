@@ -4,7 +4,7 @@
   - role: '{{ playbook_dir }}'
   tasks:
   - name: check groovy version
-    command: groovy --version
+    command: sh -l -c 'groovy --version'
     register: groovy_test_output
   - debug:
       msg: '{{ groovy_test_output.stdout }}'
