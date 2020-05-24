@@ -5,6 +5,6 @@
   tasks:
   - name: check groovy version
     command: groovy --version
-    registry: groovy_test_output
+    register: groovy_test_output
   - debug:
       msg: '{{ groovy_test_output.stdout }}'
