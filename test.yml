@@ -1,0 +1,10 @@
+---
+- hosts: all
+  roles:
+  - role: '{{ playbook_dir }}'
+  tasks:
+  - name: check groovy version
+    command: groovy --version
+    registry: groovy_test_output
+  - debug:
+      msg: '{{ groovy_test_output.stdout }}'

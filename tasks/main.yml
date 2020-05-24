@@ -1,0 +1,59 @@
+---
+- name: resolve platform specific vars
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      skip: true
+      paths:
+        - '{{ role_path }}/vars'
+- name: look for existing install
+  become: yes
+  stat:
+    path: '{{ groovy_install_dir }}'
+  changed_when: False
+  register: groovy_binary
+- when: not groovy_binary.stat.exists
+  block:
+    - name: download...
+      become: yes
+      become_user: root
+      get_url:
+        url: '{{ groovy_url }}'
+        dest: /tmp/{{ groovy_zip }}
+        checksum: '{{ groovy_checksum }}'
+        mode: 0644
+    - name: unarchive...
+      become: yes
+      become_user: root
+      unarchive:
+        remote_src: yes
+        src: /tmp/{{ groovy_zip }}
+        dest: '{{ groovy_parent_install_dir }}'
+        creates: '{{ groovy_install_dir }}'
+  always:
+    - name: clean up
+      become: yes
+      become_user: root
+      file:
+        path: /tmp/{{ groovy_zip }}
+        state: absent
+- name: link
+  become: yes
+  become_user: root
+  file:
+    src: '{{ groovy_install_dir }}'
+    dest: '{{ groovy_link_dir }}'
+    state: link
+- name: add to default login shell
+  become: yes
+  become_user: root
+  with_items:
+    - f: groovy.sh
+      d: /etc/profile.d
+  template:
+    src: '{{ item.f }}.j2'
+    dest: '{{ item.d }}/{{ item.f }}'
+    mode: 0644

@@ -1,0 +1,39 @@
+---
+galaxy_info:
+  author: Andrew Rothstein
+  description: installs apache groovy
+  company: BlackRock Financial Management
+  license:
+    - MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Alpine
+      versions:
+        - all
+    - name: Archlinux
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - buster
+        - jessie
+        - stretch
+  galaxy_tags:
+    - development
+  role_name: groovy
+
+dependencies:
+  - role: andrewrothstein.unarchive-deps
+    version: v1.1.3
+  - role: andrewrothstein.openjdk
+    openjdk_app: jdk
+    version: v2.0.6

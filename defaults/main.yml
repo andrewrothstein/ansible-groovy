@@ -1,0 +1,7 @@
+---
+groovy_ver: 3.0.4
+groovy_mirror: https://dl.bintray.com/groovy/maven
+groovy_parent_install_dir: /usr/local
+groovy_checksums:
+  # https://downloads.apache.org/groovy/3.0.4/distribution/apache-groovy-binary-3.0.4.zip.sha256
+  '3.0.4': sha256:eba1dc30ed0ceeefe56eba6e79cf43c2ae164eea6e407fd7a79f6c434a667146
