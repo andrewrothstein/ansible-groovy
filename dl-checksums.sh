@@ -10,4 +10,5 @@ dl () {
     printf "  '%s': sha256:%s\n" $ver $(curl -sSL $url)
 }
 
-dl ${1:-3.0.6}
+dl ${1:-3.0.9}
+

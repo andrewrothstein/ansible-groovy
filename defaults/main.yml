@@ -1,5 +1,5 @@
 ---
-groovy_ver: 3.0.6
+groovy_ver: 3.0.9
 groovy_mirror: https://dl.bintray.com/groovy/maven
 groovy_parent_install_dir: /usr/local
 groovy_checksums:
@@ -7,3 +7,9 @@ groovy_checksums:
   '3.0.4': sha256:eba1dc30ed0ceeefe56eba6e79cf43c2ae164eea6e407fd7a79f6c434a667146
   # https://downloads.apache.org/groovy/3.0.6/distribution/apache-groovy-binary-3.0.6.zip.sha256
   '3.0.6': sha256:6e0cc2d5b8a7b8585f15816c7d5cae1b09b4003ced0002e79abe7b4b1ebb35f2
+  # https://downloads.apache.org/groovy/3.0.7/distribution/apache-groovy-binary-3.0.7.zip.sha256
+  '3.0.7': sha256:b9e2041cb83a963922f6761a0b037c5784670616632142b8d7002b7c3a96b7f5
+  # https://downloads.apache.org/groovy/3.0.8/distribution/apache-groovy-binary-3.0.8.zip.sha256
+  '3.0.8': sha256:87cf2a61b77f6378ae1081cfda9d14bc651271b25ffac57fc936cd17662e3240
+  # https://downloads.apache.org/groovy/3.0.9/distribution/apache-groovy-binary-3.0.9.zip.sha256
+  '3.0.9': sha256:eb34f4ee229b1a424adb87df5b999f66d1b1285694e5332d0800896744c2e421
