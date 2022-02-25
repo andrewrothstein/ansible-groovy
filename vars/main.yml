@@ -2,7 +2,8 @@
 # vars file for groovy
 groovy_name: groovy-{{ groovy_ver }}
 groovy_zip: apache-groovy-binary-{{ groovy_ver }}.zip
-groovy_url: '{{ groovy_mirror }}/{{ groovy_zip }}'
+groovy_tmp_zip: /tmp/{{ groovy_zip }}
+groovy_url: '{{ groovy_mirror }}/{{ groovy_ver }}/distribution/{{ groovy_zip }}'
 groovy_checksum: '{{ groovy_checksums[groovy_ver] }}'
 groovy_install_dir: '{{ groovy_parent_install_dir }}/{{ groovy_name }}'
 groovy_link_dir: '{{ groovy_parent_install_dir }}/groovy'

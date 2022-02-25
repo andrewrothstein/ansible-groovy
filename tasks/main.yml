@@ -9,46 +9,46 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: look for existing install
-  become: yes
+- name: look for existing install in {{ groovy_install_dir }}
+  become: true
   stat:
     path: '{{ groovy_install_dir }}'
   changed_when: False
   register: groovy_binary
 - when: not groovy_binary.stat.exists
   block:
-    - name: download...
-      become: yes
+    - name: downloading {{ groovy_url }} to {{ groovy_tmp_zip }}
+      become: true
       become_user: root
       get_url:
         url: '{{ groovy_url }}'
-        dest: /tmp/{{ groovy_zip }}
+        dest: '{{ groovy_tmp_zip }}'
         checksum: '{{ groovy_checksum }}'
         mode: 0644
-    - name: unarchive...
-      become: yes
+    - name: unarchiving {{ groovy_tmp_zip }} to {{ groovy_parent_install_dir }}
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
-        src: /tmp/{{ groovy_zip }}
+        remote_src: true
+        src: '{{ groovy_tmp_zip }}'
         dest: '{{ groovy_parent_install_dir }}'
         creates: '{{ groovy_install_dir }}'
   always:
-    - name: clean up
-      become: yes
+    - name: rm {{ groovy_tmp_zip }}
+      become: true
       become_user: root
       file:
-        path: /tmp/{{ groovy_zip }}
+        path: '{{ groovy_tmp_zip }}'
         state: absent
-- name: link
-  become: yes
+- name: linking {{ groovy_link_dir }} to {{ groovy_install_dir }}
+  become: true
   become_user: root
   file:
     src: '{{ groovy_install_dir }}'
     dest: '{{ groovy_link_dir }}'
     state: link
-- name: add to default login shell
-  become: yes
+- name: adding groovy to default login shell path
+  become: true
   become_user: root
   with_items:
     - f: groovy.sh
