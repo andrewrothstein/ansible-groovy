@@ -1,5 +1,5 @@
 ---
-groovy_ver: 4.0.0
+groovy_ver: 4.0.1
 groovy_mirror: https://downloads.apache.org/groovy
 groovy_parent_install_dir: /usr/local
 groovy_checksums:
@@ -15,3 +15,5 @@ groovy_checksums:
   '3.0.9': sha256:eb34f4ee229b1a424adb87df5b999f66d1b1285694e5332d0800896744c2e421
   # https://downloads.apache.org/groovy/4.0.0/distribution/apache-groovy-binary-4.0.0.zip.sha256
   '4.0.0': sha256:bd5b8af69c169f41c5c7aea00cb8832a6e232ee697f626e29d8f92adebe30df9
+  # https://downloads.apache.org/groovy/4.0.1/distribution/apache-groovy-binary-4.0.1.zip.sha256
+  '4.0.1': sha256:8ac4a0ccbdc69db3ff17cf20a43dafacc6396f031666f13ff2e7bc6e376e4497
