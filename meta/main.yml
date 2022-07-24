@@ -15,8 +15,8 @@ galaxy_info:
         - all
     - name: Debian
       versions:
+        - bullseye
         - buster
-        - stretch
     - name: EL
       versions:
         - 8
@@ -28,6 +28,7 @@ galaxy_info:
       versions:
         - bionic
         - focal
+        - jammy
   galaxy_tags:
     - development
   role_name: groovy
