@@ -22,8 +22,8 @@ galaxy_info:
         - 8
     - name: Fedora
       versions:
-        - 35
         - 36
+        - 37
     - name: Ubuntu
       versions:
         - bionic
@@ -32,8 +32,3 @@ galaxy_info:
   galaxy_tags:
     - development
   role_name: groovy
-
-dependencies:
-  - andrewrothstein.unarchive-deps
-  - role: andrewrothstein.temurin
-    openjdk_app: jdk
