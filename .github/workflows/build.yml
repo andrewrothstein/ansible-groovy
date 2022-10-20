@@ -33,7 +33,7 @@ jobs:
         - ubuntu_bionic
         - ubuntu_focal
         - ubuntu_jammy
-        python-versions:
+        python-version:
         - '3.10'
 name: dcb
 'on':
