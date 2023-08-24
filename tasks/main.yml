@@ -1,6 +1,6 @@
 ---
 - include_role:
-    name: andrewrothstein.unarchive-deps
+    name: andrewrothstein.unarchivedeps
 - include_role:
     name: andrewrothstein.temurin
   vars:
@@ -19,7 +19,7 @@
   become: true
   stat:
     path: '{{ groovy_install_dir }}'
-  changed_when: False
+  changed_when: false
   register: groovy_binary
 - when: not groovy_binary.stat.exists
   block:
