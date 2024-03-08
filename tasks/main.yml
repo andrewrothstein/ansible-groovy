@@ -1,12 +1,14 @@
 ---
-- include_role:
+- name: Installing andrewrothstein.unarchivedeps
+  ansible.builtin.include_role:
     name: andrewrothstein.unarchivedeps
-- include_role:
+- name: Installing andrewrothstein.temurin
+  ansible.builtin.include_role:
     name: andrewrothstein.temurin
   vars:
     openjdk_app: jdk
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -15,51 +17,52 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: look for existing install in {{ groovy_install_dir }}
+- name: Look for existing install in {{ groovy_install_dir }}
   become: true
-  stat:
+  ansible.builtin.stat:
     path: '{{ groovy_install_dir }}'
   changed_when: false
   register: groovy_binary
-- when: not groovy_binary.stat.exists
+- name: Downloading and installing groovy
+  when: not groovy_binary.stat.exists
   block:
-    - name: downloading {{ groovy_url }} to {{ groovy_tmp_zip }}
+    - name: Downloading {{ groovy_url }} to {{ groovy_tmp_zip }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ groovy_url }}'
         dest: '{{ groovy_tmp_zip }}'
         checksum: '{{ groovy_checksum }}'
-        mode: 0644
-    - name: unarchiving {{ groovy_tmp_zip }} to {{ groovy_parent_install_dir }}
+        mode: '644'
+    - name: Unarchiving {{ groovy_tmp_zip }} to {{ groovy_parent_install_dir }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ groovy_tmp_zip }}'
         dest: '{{ groovy_parent_install_dir }}'
         creates: '{{ groovy_install_dir }}'
   always:
-    - name: rm {{ groovy_tmp_zip }}
+    - name: Rm {{ groovy_tmp_zip }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ groovy_tmp_zip }}'
         state: absent
-- name: linking {{ groovy_link_dir }} to {{ groovy_install_dir }}
+- name: Linking {{ groovy_link_dir }} to {{ groovy_install_dir }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ groovy_install_dir }}'
     dest: '{{ groovy_link_dir }}'
     state: link
-- name: adding groovy to default login shell path
+- name: Adding groovy to default login shell path
   become: true
   become_user: root
   with_items:
     - f: groovy.sh
       d: /etc/profile.d
-  template:
+  ansible.builtin.template:
     src: '{{ item.f }}.j2'
     dest: '{{ item.d }}/{{ item.f }}'
     mode: 0644

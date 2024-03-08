@@ -1,10 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.groovy
+  hosts: all
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
   tasks:
-  - name: check groovy version
-    command: sh -l -c 'groovy --version'
-    register: groovy_test_output
-  - debug:
-      msg: '{{ groovy_test_output.stdout }}'
+    - name: Executing 'groovy version'
+      ansible.builtin.command: sh -l -c 'groovy --version'
+      changed_when: false
+      register: groovy_test_output
+    - name: Output from 'groovy version'
+      ansible.builtin.debug:
+        msg: '{{ groovy_test_output.stdout }}'
