@@ -10,4 +10,4 @@ dl () {
     printf "  '%s': sha256:%s\n" $ver $(curl -sSLf $url)
 }
 
-dl ${1:-4.0.21}
+dl ${1:-4.0.22}
