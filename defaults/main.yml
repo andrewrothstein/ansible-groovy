@@ -1,5 +1,5 @@
 ---
-groovy_ver: 4.0.22
+groovy_ver: 5.0.4
 groovy_mirror: https://downloads.apache.org/groovy
 groovy_parent_install_dir: /usr/local
 groovy_checksums:
@@ -53,3 +53,29 @@ groovy_checksums:
   '4.0.21': sha256:5ef878f70db8b642d204e9a410c519c1131a3e7a9ddb4b6910d214909cb2e98a
   # https://downloads.apache.org/groovy/4.0.22/distribution/apache-groovy-binary-4.0.22.zip.sha256
   '4.0.22': sha256:d91a3ddfe353871d4c2656d3d0a05c828bc3ff36e9d49dbdbec13dcd98f05877
+  # https://downloads.apache.org/groovy/4.0.23/distribution/apache-groovy-binary-4.0.23.zip.sha256
+  '4.0.23': sha256:7089dd7a1e84adc814d616f5ec2f7d7dac2044a0a0457f3341b3b92d30204229
+  # https://downloads.apache.org/groovy/4.0.24/distribution/apache-groovy-binary-4.0.24.zip.sha256
+  '4.0.24': sha256:dbff36835568bec2271876f70bfcca6deb80e1b179453cca934a502ea301bb80
+  # https://downloads.apache.org/groovy/4.0.25/distribution/apache-groovy-binary-4.0.25.zip.sha256
+  '4.0.25': sha256:822cad8e03388f23bf613d37f990b813bb4165fe389fd3fcc24f8b96476c30ef
+  # https://downloads.apache.org/groovy/4.0.26/distribution/apache-groovy-binary-4.0.26.zip.sha256
+  '4.0.26': sha256:3be6880c6de70eada2f3f5c69e1e94953e0b0c4e33c4604c1040d05dddeaed92
+  # https://downloads.apache.org/groovy/4.0.27/distribution/apache-groovy-binary-4.0.27.zip.sha256
+  '4.0.27': sha256:bc917c8bb01b2832f124a7bd63a3c72ba5e83ef7f056650dfd9a2f7944960685
+  # https://downloads.apache.org/groovy/4.0.28/distribution/apache-groovy-binary-4.0.28.zip.sha256
+  '4.0.28': sha256:6a052bfd2ca77d57e0db304a313dd9a729945c5a31420e6d48505be4840bfc54
+  # https://downloads.apache.org/groovy/4.0.29/distribution/apache-groovy-binary-4.0.29.zip.sha256
+  '4.0.29': sha256:4a42d976370c6ab373a35ec602440a8a780a7715d55e4117b3028864a247878a
+  # https://downloads.apache.org/groovy/4.0.30/distribution/apache-groovy-binary-4.0.30.zip.sha256
+  '4.0.30': sha256:00ff6f78e8a042def489e6c018f2353895da99936b73c175ea645d536a9acb66
+  # https://downloads.apache.org/groovy/5.0.0/distribution/apache-groovy-binary-5.0.0.zip.sha256
+  '5.0.0': sha256:7cacb815c96252494ca4b9a6889936fe59680a3c2ee1569b252546a991a9855c
+  # https://downloads.apache.org/groovy/5.0.1/distribution/apache-groovy-binary-5.0.1.zip.sha256
+  '5.0.1': sha256:be66a17f34f69f473b23958ebee0770e88aaf735d79ba962454375c38d2854a5
+  # https://downloads.apache.org/groovy/5.0.2/distribution/apache-groovy-binary-5.0.2.zip.sha256
+  '5.0.2': sha256:70f82f11b1b764e207dcf5568882c78dc77293f307816242394a3f7a74f20e81
+  # https://downloads.apache.org/groovy/5.0.3/distribution/apache-groovy-binary-5.0.3.zip.sha256
+  '5.0.3': sha256:63bd43641292519e0fed40c3ee60215d54e7d2aed828debfeaae34f00b473bbb
+  # https://downloads.apache.org/groovy/5.0.4/distribution/apache-groovy-binary-5.0.4.zip.sha256
+  '5.0.4': sha256:5e5e9a468d4344e0c8ee0cd68c62751ccf4e5f8f84d7ad9b8abc6a01014b9f79
